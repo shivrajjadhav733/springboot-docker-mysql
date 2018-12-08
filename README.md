@@ -2,7 +2,9 @@
 
 1. Use MySQL Image published by Docker Hub (https://hub.docker.com/_/mysql/)
 Command to run the mysql container
-`docker run --name mysql-standalone -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_DATABASE=test -e MYSQL_USER=testuser -e MYSQL_PASSWORD=testuser@123 -d mysql:5.7`
+`docker run --name mysql-standalone <-p 3306:3306> -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_DATABASE=test -e MYSQL_USER=testuser -e MYSQL_PASSWORD=testuser@123 -d mysql:5.7`
+
+## optional -p 3306:3306
 
 2. In the Spring Boot Application, use the same container name of the mysql instance in the application.properties
 `spring.datasource.url = jdbc:mysql://mysql-standalone:3306/test?useSSL=false`
